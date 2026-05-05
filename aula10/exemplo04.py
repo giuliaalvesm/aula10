@@ -10,6 +10,8 @@ for i in range (5):
         print('\nInforme um número válido. ')
     except ZeroDivisionError:
         print('\nInforme um número válido de Funcionários.')
+    except KeyboardInterrupt: #pra quando eu dar ctrl+c e encerrar a operação
+        print('Operação Encerrada pelo Usuário.')
 
 #SE NÃO DER ERRO, EXECUTA O ELSE
     else:
