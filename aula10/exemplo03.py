@@ -1,16 +1,14 @@
-# Cálculo de produtividade
-# --------------------------
-
 print('=== Cálculo de Produtividade ===')
 
-try: # try e except são pra corrigir possíveis erros de valor
+try:
     total_produzido = float(input('Valor total da venda: '))
     funcionarios = int(input('Total de Funcionários: '))
-
     media_por_funcionario = total_produzido / funcionarios
-    print(f'Média por funcionário: {media_por_funcionario:.2f}')
-except ValueError:
+# TUDO O QUE PODE DAR ERRO ESTÁ AQUI EM CIMA, O RESTANTE VAI PARA O ELSE LÁ EM BAIXO
+
+except (ValueError, TypeError):
     print('Informe um número válido. ')
-except ZeroDivisionError: # é para corrigir divisão feita com zero
+except ZeroDivisionError:
     print('Informe um número válido de Funcionários.')
-    
+else:
+    print(f'Média por funcionário: {media_por_funcionario:.2f}')
